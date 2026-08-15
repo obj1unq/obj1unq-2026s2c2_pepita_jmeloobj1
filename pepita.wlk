@@ -19,7 +19,7 @@ object alpiste{
 
 object manzana{
 var gradoMadurez = 1
-method energiaQueAporta {
+method energiaQueAporta() {
   return if (gradoMadurez<3){
     gradoMadurez * 20
   }
