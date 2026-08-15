@@ -1,22 +1,31 @@
 object pepita{
     var energia = 100
+     var entrenador = null
+ method entrenador(_entrenador) {
+   entrenador = _entrenador
+
+ }
+   
     method volar(distancia){
         energia = energia - 10 - distancia/10
     }
+   
     method comer(alimento){
         energia = energia + alimento.energiaQueAporta()
     }
+   
     method descansa(){
         energia = energia + 10
     }
+   
     method estáCansada() {
       return energia<30
     }
-
+    
     method energia() {
       return energia
     }
-
+   
     method energia(_energia) {
       energia = _energia
     }
@@ -24,6 +33,12 @@ object pepita{
 
 object pepon{
   var energia = 30
+   var entrenador = null
+
+ method entrenador(_entrenador) {
+   entrenador = _entrenador
+ }
+
   method comer(alimento){
     energia = energia + alimento.energiaQueAporta()/2
   }
@@ -44,18 +59,17 @@ object pepon{
 }
 
 object rebeca{
-  var ave = pepita
+  var ave 
   var cenas = 0
-  method tieneAve() {
-    return ave
+  
+  method ave(_ave) {
+     ave =_ave
+     _ave.entrenador(self)
   }
   method alimentar(alimento){
-    if (tieneAve() = pepita){
-      pepita.comer(alimento)
-     cenas = cenas +1 
-    } 
-    else pepon.comer(alimento)
-    cenas = cenas +1 
+
+      rebeca.ave.comer(alimento)
+        cenas = cenas +1 
   }
   method cenas() {
     return cenas
