@@ -3,7 +3,7 @@ object pepita{
     method volar(distancia){
         energia = energia - 10 - distancia/10
     }
-    method comer(alimentos){
+    method comer(alimento){
         energia = energia + alimento.energiaQueAporta()
     }
     method descansa(){
